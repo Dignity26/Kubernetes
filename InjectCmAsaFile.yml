@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myfirstpod
+  labels:
+    env: prod
+spec:
+  containers:
+    - name: containername
+      image: dignity26/imagename
+      volumeMounts:
+        - name: test
+          mountPath: "/config"
+          readOnly: true
+
+  volume:
+    - name: test
+      configMap:
+        name: envcm
+        items:
+          - key: variable1
+            path: "variable1here"
