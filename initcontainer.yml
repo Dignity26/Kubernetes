@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myfirstpod
+  labels:
+    env: prod
+spec:
+  containers:
+    - name: firstcontainer
+      image: dignity26/imagename
+      env:
+        - name: myname
+          value: ajit
+        - name: age
+          value: twentynine
+      args: ["sleep","3600"]
+
+    - name: initcontainer
+      image: dignity26/imagename
+  
+  initContainers:
+    - name: initcontainer
+      image: dignity26/imagename
+      env:
+        - name: myname
+          value: ajit
+        - name: age
+          value: twentynine
+      args: ["sleep","30"]
