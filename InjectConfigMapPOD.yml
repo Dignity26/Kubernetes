@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myfirstpod
+  labels:
+    env: prod
+spec:
+  containers:
+    - name: containername
+      image: dignity26/imagename
+      envFrom:  # to inject all Env variable 
+        - configMapRef:
+            name: envcm
+      env:
+        - name: variablefromcm
+          valueFrom:
+            configMapKeyRef:
+              key: variable2
+              name: envcm #nameof confingMap
+
