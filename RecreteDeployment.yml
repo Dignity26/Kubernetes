@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: firstdeployment
+  labels:
+    name: firstdeployment
+  annotations:
+    kubernetes.io/change-cause: "my custom message"
+spec:
+  replicas: 10
+  strategy:
+    type: Recreate
+  selector: 
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      name: dpod
+      labels:
+        app: myapp
+    spec:
+     - name: container
+       image: coolgourav147/nginx-custom
