@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata: 
+  name: firstrccontroller
+  labels: 
+    appname: rcapp
+spec:
+  replicas: 5
+  selector: 
+    type: app
+  template:
+    metadata:
+      name: myfirstpod
+      labels:
+        type: app
+    spec:
+      containers:
+       - name: containername
+         image: coolgourav147/nginx-custom
+      
