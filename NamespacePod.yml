@@ -1,1 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myfirstpod
+  namespace: test
+  labels:
+    env: prod
+spec:
+  containers:
+    - name: containername
+      image: dignity26/imagename
 
