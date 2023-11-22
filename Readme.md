@@ -191,6 +191,29 @@ kubectl create cm cm3 --from-file=properties/
 kubectl create cm cm3 --from-env-file=env.sh
 
 
+Secret:
+kubectl create secret --help
+
+kubectl create secret generic firstsecret --from-literal=name=ajit
+
+echo -n "ajit" | base64
+
+kubectl create secret generic filesecret --from-file
+
+kubectl create secret generic fromenvfile --from-file=env.sh
+
+Taint:
+kubectl taint node worker01 mysize=large:NoSchedule / PreferNoSchedule /NoExecute
+kubectl taint node worker01 mysize-     to remove taint
+
+
+Volume:
+emptyDir: Inside Pod
+HostPath: Outside Pod
+
+EKS >> 
+
+eksctl create cluster --name ajit-cluster --node-type t2.small --region ap-south-1 --node-zones ap-south-1a 
 
 
 
