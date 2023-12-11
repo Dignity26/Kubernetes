@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: hello
+spec:
+  schedule: "* * * * *"
+  successfulJobHistoryLimit: 0
+  failedJobHistoryLimit: 0
+  suspend: true
+  concurrencyPolicy: Allow/Forbid/Replace
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: busybox
+            image: busybox
+            command: ["echo","Hello K8s"]
+            restartPolicy: Never
