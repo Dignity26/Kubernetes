@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: helloworld
+spec:
+  completions: 2
+  Parellilism: 2
+  backofflimit: 2  #try 2 times after failure
+  activeDeadlineSeconds: 20 #Pod will if not completed within mentioned time
+  template:
+    spec:
+      containers:
+      - name: busybox
+        image: busybox
+        command: ["echo","Hello World"]
+      restartPolicy: Never
