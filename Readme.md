@@ -216,5 +216,11 @@ EKS >>
 eksctl create cluster --name ajit-cluster --node-type t2.small --region ap-south-1 --node-zones ap-south-1a 
 
 
+Ingress:
+Path Based Routing
+Host based routing
+SSl certificate
+
+
 
 
