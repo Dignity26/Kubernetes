@@ -221,6 +221,15 @@ Path Based Routing
 Host based routing
 SSl certificate
 
+Stateful State:
+the resources which are allow us to deploy and manage stateful applications
+Stateful Application:
+The application that requires persistent volume.  Ex. Database
+Stateless Ex: Web application.
+
+
+
+
 
 
 
