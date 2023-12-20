@@ -227,6 +227,13 @@ Stateful Application:
 The application that requires persistent volume.  Ex. Database
 Stateless Ex: Web application.
 
+Headless service:
+Provide Unique DNS
+not have Ip
+not provide load balancer
+mysql-0.<headless service name>.namespace.clustor domain
+
+
 
 
 
